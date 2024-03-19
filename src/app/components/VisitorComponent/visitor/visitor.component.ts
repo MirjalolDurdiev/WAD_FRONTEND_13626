@@ -4,6 +4,7 @@ import { VisitorService } from '../../../ReceptionSystemService/service-visitor.
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { Router } from '@angular/router';
+
 interface Visitor {
   id: number;
   firstName: string;

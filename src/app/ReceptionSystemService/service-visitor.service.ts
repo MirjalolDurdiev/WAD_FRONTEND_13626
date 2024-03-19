@@ -8,7 +8,6 @@ import { catchError } from 'rxjs';
 })
 export class VisitorService {
   httpClient = inject(HttpClient);
-  constructor() {}
 
   getAllVisitors() {
     return this.httpClient.get<Visitor[]>(

@@ -5,6 +5,8 @@ import { ReceptionComponent } from './components/ReceptionComponent/reception/re
 import { DetailsVisitorComponent } from './components/VisitorComponent/details-visitor/details-visitor.component';
 import { EditVisitorComponent } from './components/VisitorComponent/edit-visitor/edit-visitor.component';
 import { CreateVisitorComponent } from './components/VisitorComponent/create-visitor/create-visitor.component';
+import { DetailsReceptionComponent } from './components/ReceptionComponent/details-reception/details-reception.component';
+import { CreateReceptionComponent } from './components/ReceptionComponent/create-reception/create-reception.component';
 
 export const routes: Routes = [
   {
@@ -28,11 +30,19 @@ export const routes: Routes = [
     component: DetailsVisitorComponent,
   },
   {
+    path: 'reception/:id',
+    component: DetailsReceptionComponent,
+  },
+  {
     path: 'visitor/:id/edit',
     component: EditVisitorComponent,
   },
   {
     path: 'visitor-create',
     component: CreateVisitorComponent,
+  },
+  {
+    path: 'reception-create',
+    component: CreateReceptionComponent,
   },
 ];

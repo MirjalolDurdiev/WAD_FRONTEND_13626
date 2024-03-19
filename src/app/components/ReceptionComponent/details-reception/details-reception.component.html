@@ -1,1 +1,28 @@
-<p>details-reception works!</p>
+<div class="flex mt-8 justify-center">
+  <mat-card class="shadow w-4/12">
+    <mat-card-header>
+      <mat-card-title>Reception Details</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="p-8">
+        <p class="text-gray-700"><b>ID:</b> {{ detailedReception.id }}</p>
+        <p class="text-gray-700"><b>Date:</b> {{ detailedReception.date }}</p>
+        <p class="text-gray-700">
+          <b>Status:</b> {{ detailedReception.status }}
+        </p>
+        <p class="text-gray-700">
+          <b>VisitorId:</b> {{ detailedReception.visitorId }}
+        </p>
+        <p class="text-gray-700">
+          <b>Visitor Info:</b>
+          <span *ngIf="detailedReception.visitor">
+            {{ detailedReception.visitor.firstName }}
+            {{ detailedReception.visitor.lastName }} ({{
+              detailedReception.visitor.email
+            }}) - {{ detailedReception.visitor.phoneNumber }}
+          </span>
+        </p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

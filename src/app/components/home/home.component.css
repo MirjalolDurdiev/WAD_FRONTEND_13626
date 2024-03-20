@@ -1,11 +1,12 @@
 .main-bar {
+  padding-top: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0f0f0;
   height: 50px;
 }
 
 .main-bar button {
   margin: 0 10px;
+  background-color: cadetblue;
 }

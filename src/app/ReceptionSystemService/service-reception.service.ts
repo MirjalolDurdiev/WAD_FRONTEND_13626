@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Reception } from '../Interfaces/Reception';
-import { catchError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -29,15 +28,5 @@ export class ReceptionService {
       'https://localhost:7098/api/Receptions/',
       reception
     );
-  }
-  UpdateVisitor(id: number, reception: Reception) {
-    return this.httpClient
-      .put<Reception>(`https://localhost:7098/api/Receptions/${id}`, reception)
-      .pipe(
-        catchError((error) => {
-          console.error('Error updating reception:', error);
-          throw new Error('Failed to update reception');
-        })
-      );
   }
 }

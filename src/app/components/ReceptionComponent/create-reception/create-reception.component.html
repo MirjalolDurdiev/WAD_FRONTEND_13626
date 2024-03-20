@@ -1,127 +1,45 @@
-<!-- <div class="p-8 mt-8 flex justify-center">
-  <form class="shadow border w-4/12 p-4">
+<div class="p-8 mt-8 flex justify-center">
+  <form class="shadow w-4/12 p-4">
     <div class="flex">
-      <mat-form-field class="w-full">
-        <mat-label>Visitor Id</mat-label>
-        <input
-          matInput
-          type="number"
-          [(ngModel)]="createReception.visitorId"
-          name="visitorId"
-          required
-        />
-      </mat-form-field>
-    </div>
-    <div class="flex">
-      <mat-form-field class="w-full">
-        <mat-label>Date</mat-label>
+      <mat-form-field class="field">
+        <mat-label>Choose a date</mat-label>
         <input
           matInput
           [matDatepicker]="picker"
+          name="date"
           [(ngModel)]="createReception.date"
         />
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
     </div>
     <div class="flex">
-      <mat-form-field class="w-full">
-        <mat-label>Status</mat-label>
-        <mat-select [(ngModel)]="createReception.status" required>
-          <mat-option *ngFor="let status of statuses" [value]="status.id">
-            {{ status.name }}
-          </mat-option>
+      <mat-form-field class="field">
+        <mat-label>Select Status</mat-label>
+        <mat-select [(ngModel)]="createReception.status" name="status">
+          @for (v of statusOptions; track v.value) {
+          <mat-option [value]="v.value">{{ v.label }}</mat-option>
+          }
         </mat-select>
       </mat-form-field>
     </div>
-    <div class="flex justify-center">
-      <button mat-raised-button color="primary" (click)="create()">
-        Create
-      </button>
+    <div class="flex">
+      <mat-form-field class="field">
+        <mat-label>Select Visitor</mat-label>
+        <mat-select [(ngModel)]="VisitorId" name="Visitors">
+          @for (v of Visitors; track v.id) {
+          <mat-option [value]="v.id">{{
+            v.firstName + " " + v.lastName
+          }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="SaveButton">
+      <button mat-raised-button color="primary" (click)="create()">Save</button>
     </div>
   </form>
-</div> -->
-
-<!-- <mat-form-field class="field">
-  <mat-label>Choose a date</mat-label>
-  <input
-    matInput
-    [matDatepicker]="picker"
-    name="Date"
-    [(ngModel)]="createReception.date"
-  />
-  <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
-<!-- <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
-</mat-form-field>
-@if (!!errorObj?.['$.Date']) {
-<mat-error class="field_error">{{errorObj?.['$.Date']}}</mat-error>
-} @if (!!errorObj?.['Date']) {
-<mat-error class="field_error">{{errorObj?.['Date']}}</mat-error>
-}
-<mat-form-field class="field">
-  <mat-label>Choose Visitor</mat-label>
-  <mat-select [(ngModel)]="VisitorId" name="Category">
-    @for(v of Visitor; track v.id) {
-    <mat-option [value]="v.id">{{ v.id }}</mat-option>
-    }
-  </mat-select>
-</mat-form-field>
-<div class="flex justify-center">
-  <button mat-raised-button color="primary" (click)="create()">Create</button>
-</div> -->
-
-<!-- <mat-form-field class="field">
-  <mat-label>Choose Status</mat-label>
-  <mat-select [(ngModel)]="categoryId" name="Category">
-    @for(c of categories; track c.id) {
-    <mat-option [value]="c.id">{{ c.title }}</mat-option>
-    }
-  </mat-select>
-</mat-form-field> -->
-
-<!-- <div class="buttons">
-  <button mat-stroked-button (click)="clearForm()" color="accent">Clear</button>
-  <button mat-stroked-button (click)="submitForm()" color="primary">
-    Submit
-  </button>
-</div> -->
-
-<!-- <mat-form-field class="field">
-  <mat-label>Choose a date</mat-label>
-  <input
-    matInput
-    [matDatepicker]="picker"
-    name="Date"
-    [(ngModel)]="createReception.date"
-  />
-  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
-</mat-form-field>
-@if (!!errorObj?.['$.Date']) {
-<mat-error class="field_error">{{ errorObj?.['$.Date'] }}</mat-error>
-} @if (!!errorObj?.['Date']) {
-<mat-error class="field_error">{{ errorObj?.['$.Date'] }}</mat-error>
-}
-
-<mat-form-field class="field">
-  <mat-label>Choose Visitor</mat-label>
-  <mat-select [(ngModel)]="VisitorId" name="Category">
-    <mat-option *ngFor="let v of Visitor; track by v.id" [value]="v.id">
-      {{ v.FirstName }}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
-
-<mat-form-field class="field">
-  <mat-label>Status</mat-label>
-  <mat-select [(ngModel)]="createReception.status" name="Status">
-    <mat-option value="pending">Pending</mat-option>
-    <mat-option value="approved">Approved</mat-option>
-    <mat-option value="rejected">Rejected</mat-option>
-  </mat-select>
-</mat-form-field>
-
-<div class="flex justify-center">
-  <button mat-raised-button color="primary" (click)="create()">Create</button>
-</div> -->
+</div>

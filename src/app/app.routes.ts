@@ -7,6 +7,7 @@ import { EditVisitorComponent } from './components/VisitorComponent/edit-visitor
 import { CreateVisitorComponent } from './components/VisitorComponent/create-visitor/create-visitor.component';
 import { DetailsReceptionComponent } from './components/ReceptionComponent/details-reception/details-reception.component';
 import { CreateReceptionComponent } from './components/ReceptionComponent/create-reception/create-reception.component';
+import { EditReceptionComponent } from './components/ReceptionComponent/edit-reception/edit-reception.component';
 
 export const routes: Routes = [
   {
@@ -36,6 +37,10 @@ export const routes: Routes = [
   {
     path: 'visitor/:id/edit',
     component: EditVisitorComponent,
+  },
+  {
+    path: 'reception/:id/edit',
+    component: EditReceptionComponent,
   },
   {
     path: 'visitor-create',

@@ -20,14 +20,26 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef>Actions</th>
       <td mat-cell *matCellDef="let reception">
-        <button mat-icon-button (click)="showDetails(reception.id)">
-          <mat-icon>details</mat-icon>
+        <button
+          mat-icon-button
+          (click)="showDetails(reception.id)"
+          class="Details"
+        >
+          Details
         </button>
-        <button mat-icon-button (click)="editReception(reception.id)">
-          <mat-icon>edit</mat-icon>
+        <button
+          mat-icon-button
+          (click)="editReception(reception.id)"
+          class="Edit"
+        >
+          Edit
         </button>
-        <button mat-icon-button (click)="deleteReception(reception.id)">
-          <mat-icon>delete</mat-icon>
+        <button
+          mat-icon-button
+          (click)="deleteReception(reception.id)"
+          class="Delete"
+        >
+          Delete
         </button>
       </td>
     </ng-container>
@@ -36,7 +48,12 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
   <div class="flex justify-end mt-4">
-    <button mat-raised-button color="primary" (click)="createReception()">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="createReception()"
+      class="Create"
+    >
       Create Reception
     </button>
   </div>

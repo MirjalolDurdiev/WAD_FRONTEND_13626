@@ -1,1 +1,32 @@
-<p>edit-reception works!</p>
+<!-- <div class="p-8 mt-8 flex justify-center">
+  <form class="shadow border w-4/12 p-4">
+    <div class="flex">
+      <mat-form-field class="w-full">
+        <mat-label>Date</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          name="date"
+          [(ngModel)]="editReception.date"
+          required
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="flex">
+      <mat-form-field class="w-full">
+        <mat-label>Status</mat-label>
+        <mat-select [(ngModel)]="editReception.status" required>
+          <mat-option *ngFor="let status of statuses" [value]="status.value">
+            {{ status.label }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="flex justify-around">
+      <button mat-raised-button (click)="toHome()">Cancel</button>
+      <button mat-raised-button color="primary" (click)="edit()">Edit</button>
+    </div>
+  </form>
+</div> -->

@@ -7,6 +7,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
+import { Visitor } from '../../../Interfaces/Visitor';
 @Component({
   selector: 'app-create-reception',
   standalone: true,
@@ -27,6 +28,10 @@ export class CreateReceptionComponent {
     date: new Date(),
     status: 1,
   };
+
+  errorObj: any;
+  Visitor: Visitor[] = [];
+  VisitorId: number = 0;
 
   receptionService = inject(ReceptionService);
   router = inject(Router);

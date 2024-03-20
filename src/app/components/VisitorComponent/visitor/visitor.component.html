@@ -1,48 +1,3 @@
-<!-- <div class="VisitorContainer">
-  <table mat-table [dataSource]="visitors" class="mat-elevation-z8">
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef>Id</th>
-      <td mat-cell *matCellDef="let visitor">{{ visitor.id }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="firstName">
-      <th mat-header-cell *matHeaderCellDef>First Name</th>
-      <td mat-cell *matCellDef="let visitor">{{ visitor.firstName }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="lastName">
-      <th mat-header-cell *matHeaderCellDef>Last Name</th>
-      <td mat-cell *matCellDef="let visitor">{{ visitor.lastName }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef>Email</th>
-      <td mat-cell *matCellDef="let visitor">{{ visitor.email }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="phoneNumber">
-      <th mat-header-cell *matHeaderCellDef>Phone Number</th>
-      <td mat-cell *matCellDef="let visitor">{{ visitor.phoneNumber }}</td>
-    </ng-container>
-    <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef>Actions</th>
-      <td mat-cell *matCellDef="let visitor">
-        <button mat-icon-button (click)="showDetails(visitor.id)">
-          <mat-icon>details</mat-icon>
-        </button>
-        <button mat-icon-button (click)="editVisitor(visitor.id)">
-          <mat-icon>edit</mat-icon>
-        </button>
-        <button mat-icon-button (click)="deleteVisitor(visitor.id)">
-          <mat-icon>delete</mat-icon>
-        </button>
-      </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-  </table>
-</div> -->
 <div class="VisitorContainer">
   <table mat-table [dataSource]="visitors" class="mat-elevation-z8">
     <ng-container matColumnDef="id">
@@ -70,17 +25,31 @@
       <td mat-cell *matCellDef="let visitor">{{ visitor.phoneNumber }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="actions">
+    <ng-container matColumnDef="actions" class="ActionButtons">
       <th mat-header-cell *matHeaderCellDef>Actions</th>
       <td mat-cell *matCellDef="let visitor">
-        <button mat-icon-button (click)="showDetails(visitor.id)">
-          <mat-icon>details</mat-icon>
+        <button
+          mat-icon-button
+          color="primary"
+          (click)="showDetails(visitor.id)"
+          class="Details"
+        >
+          Details
         </button>
-        <button mat-icon-button (click)="editVisitor(visitor.id)">
-          <mat-icon>edit</mat-icon>
+        <button
+          mat-icon-button
+          color="accent"
+          (click)="editVisitor(visitor.id)"
+          class="Edit"
+        >
+          Edit
         </button>
-        <button mat-icon-button (click)="deleteVisitor(visitor.id)">
-          <mat-icon>delete</mat-icon>
+        <button
+          mat-icon-button
+          (click)="deleteVisitor(visitor.id)"
+          class="Delete"
+        >
+          Delete
         </button>
       </td>
     </ng-container>
@@ -90,7 +59,12 @@
   </table>
 
   <div class="flex justify-end mt-4">
-    <button mat-raised-button color="primary" (click)="createVisitor()">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="createVisitor()"
+      class="Create"
+    >
       Create Visitor
     </button>
   </div>

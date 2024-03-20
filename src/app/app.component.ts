@@ -7,7 +7,7 @@ import { ReceptionComponent } from './components/ReceptionComponent/reception/re
 import { HomeComponent } from './components/home/home.component';
 import { EditVisitorComponent } from './components/VisitorComponent/edit-visitor/edit-visitor.component';
 import { DetailsVisitorComponent } from './components/VisitorComponent/details-visitor/details-visitor.component';
-import { DeleteVisitorComponent } from './components/VisitorComponent/delete-visitor/delete-visitor.component';
+// import { DeleteVisitorComponent } from './components/VisitorComponent/delete-visitor/delete-visitor.component';
 import { CreateVisitorComponent } from './components/VisitorComponent/create-visitor/create-visitor.component';
 
 @Component({
@@ -21,7 +21,7 @@ import { CreateVisitorComponent } from './components/VisitorComponent/create-vis
     HomeComponent,
     EditVisitorComponent,
     DetailsVisitorComponent,
-    DeleteVisitorComponent,
+    // DeleteVisitorComponent,
     EditVisitorComponent,
     CreateVisitorComponent,
   ],
